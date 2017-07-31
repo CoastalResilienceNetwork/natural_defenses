@@ -79,7 +79,7 @@ function ( 	ArcGISDynamicMapServiceLayer, Extent, SpatialReference, Query, Query
 								$.each( $(".atts-section .nd_atts"), function(i,v){
 									var field = v.id.split("-").pop()
 									var val = t.atts[field]
-									if ( isNaN(t.atts[field]) == false ){
+									if ( isNaN(t.atts[field]) == false && field != "F__Wave_Reduction"){
 										val = Math.round(val);
 										val = t.clicks.commaSeparateNumber(val);
 									}
