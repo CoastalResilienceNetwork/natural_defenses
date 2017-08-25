@@ -89,6 +89,7 @@ function ( 	ArcGISDynamicMapServiceLayer, Extent, SpatialReference, Query, Query
 									$('#' + v.id).html(val)
 									$(".attWrap").slideDown();
 								})
+								$("#" + t.id + "reference").attr("href", t.atts.References)
 								t.layerDefs[0] = "OBJECTID = " + t.atts.OBJECTID ;
 								t.dynamicLayer.setLayerDefinitions(t.layerDefs);
 								if (index == -1){
