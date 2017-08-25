@@ -94,7 +94,25 @@ function ( 	ArcGISDynamicMapServiceLayer, Extent, SpatialReference, Query, Query
 								t.dynamicLayer.setLayerDefinitions(t.layerDefs);
 								if (index == -1){
 									t.obj.visibleLayers.push(0);
-								}	
+								}
+								// click habitat type from attributes
+								var hab = t.atts.Habitat;
+								hab = hab.replace(/\s/g, '');
+								if ( !$("#" + t.id + "pickHabDes input[value=" + hab + "]").is(":checked") ){
+									$("#" + t.id + "pickHabDes input[value=" + hab + "]").trigger("click");
+								}
+								// click project type from attributes
+								var pt = t.atts.Project_Type;
+								pt = pt.replace(/\s/g, '');
+								if ( !$("#" + t.id + "pickProjDes input[value=" + pt + "]").is(":checked") ){
+									$("#" + t.id + "pickProjDes input[value=" + pt + "]").trigger("click");
+								}
+								// click coastline type from attributes
+								var ct = t.atts.Coastline_Type;
+								ct = ct.replace(/\s/g, '');
+								if ( !$("#" + t.id + "pickCstDes input[value=" + ct + "]").is(":checked") ){
+									$("#" + t.id + "pickCstDes input[value=" + ct + "]").trigger("click");
+								}
 							}else{
 								if (index > -1){
 									t.obj.visibleLayers.splice(index,1)
